@@ -30,7 +30,7 @@ Without a list of IPs or buckets that are confirmed to be owned by you or your c
 Run the script from the command line:
 
 ```bash
-python domain_risk_checker.py --file <domains.txt> --services EC2,S3 --owned-ips <owned_ips.txt> --owned-buckets <owned_buckets.txt> --output <output.json> --print-summary
+python risky_records.py --file <domains.txt> --services EC2,S3 --owned-ips <owned_ips.txt> --owned-buckets <owned_buckets.txt> --output <output.json> --print-summary
 ```
 
 ### Arguments
@@ -48,13 +48,13 @@ python domain_risk_checker.py --file <domains.txt> --services EC2,S3 --owned-ips
 To check domains against EC2 and S3 IP ranges and print a summary of risky records:
 
 ```bash
-python domain_risk_checker.py --file domains.txt --services EC2,S3 --print-summary
+python risky_records.py  --file domains.txt --services EC2,S3 --print-summary
 ```
 
 To store the output in JSON format:
 
 ```bash
-python domain_risk_checker.py --file domains.txt --services EC2,S3 --output risky_records.json
+python risky_records.py --file domains.txt --services EC2,S3 --output risky_records.json
 ```
 
 ## Output
