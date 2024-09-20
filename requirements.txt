@@ -1,0 +1,4 @@
+dnspython 
+aiohttp 
+rich 
+requests

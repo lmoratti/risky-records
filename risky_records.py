@@ -238,16 +238,16 @@ class RiskyRecordCNAME(RiskyRecord):
         elif self.aws_info:
             if self.domain.user_owned_buckets and self.points_to in self.domain.user_owned_buckets:
                 self.risk = "WARN"
-                self.info = f"{self.aws_info["bucket_type"]} syntax bucket URL detected and you own the currently own this bucket. Make sure to delete this record before the bucket if you no longer need it"
+                self.info = f"{self.aws_info['bucket_type']} syntax bucket URL detected and you own the currently own this bucket. Make sure to delete this record before the bucket if you no longer need it"
                 
             else:
                 if self.domain.user_owned_buckets:
                     self.risk  = "RISKY"
-                    self.info  = f"{self.aws_info["bucket_type"]} syntax bucket URL detected but is NOT owned and a CNAME record points to it."
+                    self.info  = f"{self.aws_info['bucket_type']} syntax bucket URL detected but is NOT owned and a CNAME record points to it."
                        
                 else:
                     self.risk  = "WARN"
-                    self.info  = f"{self.aws_info["bucket_type"]} syntax bucket URL detected but unable to determine if bucket is owned without a list of owned buckets."
+                    self.info  = f"{self.aws_info['bucket_type']} syntax bucket URL detected but unable to determine if bucket is owned without a list of owned buckets."
                     
         return self.risk
     
